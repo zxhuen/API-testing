@@ -31,4 +31,14 @@ Supabase
 
 ### LOGS
 
--added Dog model (6/24/26)
+### (6/24/26)
+
+-added dog model
+-added search by ID on both dog and person model
+
+### future stuff
+
+-delete
+-edit
+
+### I will then create another template with full CRUD + Alembic
