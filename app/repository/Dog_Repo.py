@@ -13,3 +13,6 @@ def create_Dog(db: Session, Dogs: DogCreate):
 
 def get_Dog(db: Session):
     return db.query(Dog).all()
+
+def get_dog_id(db: Session, ID: int):
+    return db.query(Dog).filter(Dog.id == ID).first()

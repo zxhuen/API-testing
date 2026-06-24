@@ -13,3 +13,6 @@ def create_person(db: Session, Persons: PersonCreate):
 
 def get_person(db: Session):
     return db.query(Person).all()
+
+def get_person_ID(db: Session, person_id: int):
+    return db.query(Person).filter(Person.id == person_id).first()

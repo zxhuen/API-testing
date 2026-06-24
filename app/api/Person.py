@@ -1,8 +1,8 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session  
 from app.core.database import get_db
 from app.schemas.Person import PersonResponse, PersonCreate
-from app.services.person_services import add_Person, list_Person
+from app.services.person_services import add_Person, list_Person, get_person_id
 
 
 router = APIRouter(prefix="/Person", tags=["Person"])
@@ -15,4 +15,18 @@ def create(Person: PersonCreate, db: Session = Depends(get_db)):
 @router.get("/", response_model=list[PersonResponse])
 def get_all(db: Session = Depends(get_db)):
     return list_Person(db)
+
+
+@router.get("/{person_id}", response_model=PersonResponse)
+def get_Person_ID(person_id: int, db: Session = Depends(get_db)):
+    person = get_person_id(db, person_id)
+
+    if not person:
+        raise HTTPException(
+            status_code=404,
+            detail="Person not found"
+        )
+    
+    return person
+
 
