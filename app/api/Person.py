@@ -12,7 +12,7 @@ def create(Person: PersonCreate, db: Session = Depends(get_db)):
     return add_Person(db, Person)
 
 
-@router.get("/", response_model=PersonResponse)
+@router.get("/", response_model=list[PersonResponse])
 def get_all(db: Session = Depends(get_db)):
     return list_Person(db)
 

@@ -28,3 +28,7 @@ psycopg2
 ## Backend-as-a-Service
 
 Supabase
+
+### LOGS
+
+-added Dog model (6/24/26)
