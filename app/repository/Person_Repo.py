@@ -16,3 +16,14 @@ def get_person(db: Session):
 
 def get_person_ID(db: Session, person_id: int):
     return db.query(Person).filter(Person.id == person_id).first()
+
+def delete_person_repo(db: Session, person_id: int):
+    person = db.query(Person).filter(Person.id == person_id).first()
+    if not person:
+        return None
+
+    db.delete(person)
+    db.commit()
+
+    return person
+    

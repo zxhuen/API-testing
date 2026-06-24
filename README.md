@@ -39,6 +39,8 @@ Supabase
 ### future stuff
 
 -delete
--edit
+-pagination
+-search by name
+-validation
 
 ### I will then create another template with full CRUD + Alembic
