@@ -39,6 +39,7 @@ Supabase
 ### (6/25/26)
 
 -added delete on Dog and Person
+-added edit on Person
 
 ### future stuff
 
@@ -46,4 +47,4 @@ Supabase
 -search by name
 -validation
 
-### I will then create another template with full CRUD + Alembic
+### I will then create another template with full CRUD + Alembic soon

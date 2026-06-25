@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session  
 from app.core.database import get_db
-from app.schemas.Person import PersonResponse, PersonCreate
-from app.services.person_services import add_Person, list_Person, get_person_id, delete_person_services
+from app.schemas.Person import PersonResponse, PersonCreate, PersonResponseForEdit
+from app.services.person_services import add_Person, list_Person, get_person_id, delete_person_services, edit_person_services
 
 
 router = APIRouter(prefix="/Person", tags=["Person"])
@@ -40,5 +40,19 @@ def delete_person(ID: int, db: Session = Depends(get_db)):
         )
     
     return {"message": "Person deleted successfully"}
+
+
+@router.put("{Person_ID}", response_model=PersonResponseForEdit)
+def edit_person(ID: int, personCreate: PersonCreate, db: Session = Depends(get_db)):
+    person = edit_person_services(db, ID, personCreate)
+
+    if not person:
+        raise HTTPException(
+            status_code=404,
+            detail="no person found"
+        )
+    
+    return person
+
 
 
