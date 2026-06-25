@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session  
 from app.core.database import get_db
 from app.schemas.Dog import DogResponse, DogCreate
-from app.services.dog_services import add_dog, list_Dog, get_Dog_ID
+from app.services.dog_services import add_dog, list_Dog, get_Dog_ID, delete_dog_service
 
 router = APIRouter(prefix = "/Dog", tags=["Dog"])
 
@@ -25,3 +25,16 @@ def get_dog_ID(Dog_ID: int, db: Session = Depends(get_db)):
         )
     
     return dog
+
+@router.delete("/{Dog}")
+def delete_dog_ID(ID: int, db: Session = Depends(get_db)):
+    dog = delete_dog_service(db, ID)
+
+    if not dog:
+        raise HTTPException(
+            status_code=404,
+            detail= "no dog found"
+        )
+    
+    return dog
+        

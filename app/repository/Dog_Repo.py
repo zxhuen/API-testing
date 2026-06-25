@@ -16,3 +16,18 @@ def get_Dog(db: Session):
 
 def get_dog_id(db: Session, ID: int):
     return db.query(Dog).filter(Dog.id == ID).first()
+
+def delete_dog_repo(db: Session, ID: int):
+    dog = db.query(Dog).filter(Dog.id == ID).first()
+
+    if not dog:
+        return None
+    
+    db.delete(dog)
+    db.commit()
+
+    return dog
+
+    
+
+

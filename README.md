@@ -36,9 +36,12 @@ Supabase
 -added dog model
 -added search by ID on both dog and person model
 
+### (6/25/26)
+
+-added delete on Dog and Person
+
 ### future stuff
 
--delete
 -pagination
 -search by name
 -validation
