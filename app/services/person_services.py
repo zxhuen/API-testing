@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.repository.Person_Repo import create_person, get_person, get_person_ID, delete_person_repo, edit_person_repo
+from app.repository.Person_Repo import create_person, get_person, get_person_ID, delete_person_repo, edit_person_repo, get_person_repo
 from app.schemas.Person import PersonCreate, PersonResponseForEdit
 
 def add_Person(db: Session, person: PersonCreate):
@@ -16,3 +16,6 @@ def delete_person_services(db: Session, personID: int):
 
 def edit_person_services(db: Session, personID: int, pc: PersonResponseForEdit):
     return edit_person_repo(db, personID, pc)
+
+def get_person_services(db: Session, skip: int, limit: int):
+    return get_person_repo(db, skip, limit)

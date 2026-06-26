@@ -43,4 +43,10 @@ def edit_person_repo(db: Session, peron_id: int, personCreate: PersonResponseFor
     db.refresh(person)
 
     return person
+
+
+def get_person_repo(db: Session, skip: int, limit: int):
+    return (
+        db.query(Person).offset(skip).limit(limit).all()
+    )
     

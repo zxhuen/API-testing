@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session  
 from app.core.database import get_db
 from app.schemas.Person import PersonResponse, PersonCreate, PersonResponseForEdit
-from app.services.person_services import add_Person, list_Person, get_person_id, delete_person_services, edit_person_services
+from app.services.person_services import add_Person, list_Person, get_person_id, delete_person_services, edit_person_services, get_person_services
 
 
 router = APIRouter(prefix="/Person", tags=["Person"])
@@ -15,6 +15,11 @@ def create(Person: PersonCreate, db: Session = Depends(get_db)):
 @router.get("/", response_model=list[PersonResponse])
 def get_all(db: Session = Depends(get_db)):
     return list_Person(db)
+
+
+@router.get("/personlimit", response_model=list[PersonResponse])
+def get_person_limit(limit: int, skip: int, db: Session = Depends(get_db)):
+    return get_person_services(db, skip, limit)
 
 
 @router.get("/{person_id}", response_model=PersonResponse)
@@ -53,6 +58,9 @@ def edit_person(ID: int, personCreate: PersonCreate, db: Session = Depends(get_d
         )
     
     return person
+
+
+
 
 
 
