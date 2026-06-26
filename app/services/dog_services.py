@@ -1,5 +1,5 @@
 from sqlalchemy.orm import session
-from app.repository.Dog_Repo import create_Dog, get_Dog, get_dog_id, delete_dog_repo
+from app.repository.Dog_Repo import create_Dog, get_Dog, get_dog_id, delete_dog_repo, get_dog_filter
 from app.schemas.Dog import DogCreate
 
 def add_dog(db: session, Dog: DogCreate):
@@ -13,6 +13,9 @@ def get_Dog_ID(db: session, ID: int):
 
 def delete_dog_service(db: session, ID: int):
     return delete_dog_repo(db, ID)
+
+def select_dog_filter_services(db: session, skip: int, limit: int):
+    return get_dog_filter(db, skip, limit)
 
 
 

@@ -41,10 +41,12 @@ Supabase
 -added delete on Dog and Person
 -added edit on Person
 
+### (6/26/26)
+
+-added pagination on both dog and person
+
 ### future stuff
 
--pagination
--search by name
--validation
+-alembic
 
 ### I will then create another template with full CRUD + Alembic soon

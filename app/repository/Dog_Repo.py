@@ -28,6 +28,12 @@ def delete_dog_repo(db: Session, ID: int):
 
     return dog
 
+def get_dog_filter(db: Session, skip: int, limit: int):
+
+    return (
+        db.query(Dog).offset(skip).limit(limit).all()
+    )
+
     
 
 
