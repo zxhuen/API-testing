@@ -1,124 +1,170 @@
 # FeedBook Demo API
 
-A backend API built with FastAPI, SQLAlchemy, and PostgreSQL (Supabase), focused on learning backend development fundamentals such as CRUD, database migrations, and authentication.
+A backend REST API built with **FastAPI**, **SQLAlchemy**, and **PostgreSQL (Supabase)** to learn modern backend development practices. This project serves as a hands-on sandbox for implementing real-world backend concepts such as layered architecture, database relationships, migrations, authentication, and API design.
 
 ---
 
-## 🚀 Tech Stack
+# 🚀 Tech Stack
 
-### Backend
+## Backend
 
 - Python
 - FastAPI
 
-### Database
+## Database
 
 - PostgreSQL (Supabase)
 
-### ORM
+## ORM
 
 - SQLAlchemy
 
-### Migrations
+## Database Migrations
 
 - Alembic
 
-### Validation
+## Validation
 
 - Pydantic
 
-### Configuration
+## Configuration
 
 - Pydantic Settings
-- dotenv
+- python-dotenv
 
-### Database Driver
+## Database Driver
 
 - psycopg2
 
-### Backend-as-a-Service
+## Backend-as-a-Service
 
 - Supabase
 
 ---
 
-## 📦 Features Implemented
+# 📦 Features
 
-### (06/24/26)
+## CRUD Operations
+
+### Person
+
+- ✅ Create
+- ✅ Read
+- ✅ Read by ID
+- ✅ Update
+- ✅ Delete
+- ✅ Pagination
+
+### Dog
+
+- ✅ Create
+- ✅ Read
+- ✅ Read by ID
+- ✅ Delete
+- ✅ Pagination
+
+---
+
+# 🗄️ Database Features
+
+- ✅ SQLAlchemy ORM
+- ✅ One-to-Many Relationships (Person → Dogs)
+- ✅ Foreign Keys
+- ✅ Alembic Database Migrations
+- ✅ PostgreSQL (Supabase)
+
+---
+
+# 📅 Development Log
+
+## 06/24/26
 
 - Added Dog model
-- Added search by ID (Person & Dog)
+- Added search by ID for Person and Dog
 
-### (06/25/26)
+## 06/25/26
 
-- Added delete (Dog & Person)
-- Added update/edit (Person)
+- Added delete endpoints
+- Added update endpoint for Person
 
-### (06/26/26)
+## 06/26/26
 
-- Added pagination (Dog & Person)
+- Added pagination for Person and Dog
 
-### (06/27/26)
+## 06/27/26
 
-- Integrated Alembic for database migrations
+- Integrated Alembic
+- Implemented one-to-many relationships using SQLAlchemy
+- Connected Person and Dog models with Foreign Keys and `relationship()`
 
 ---
 
-## 🧠 Learning Roadmap (In Progress)
+# 🧠 Learning Roadmap
 
-### 🔐 Authentication & Security
+## 🔐 Authentication
 
 - Password hashing (bcrypt / passlib)
-- User registration & login system
-- JWT authentication
-- Protected routes (auth middleware / dependencies)
+- User registration
+- User login
+- JWT Authentication
+- Protected routes
 
-### 👤 Authorization
+## 👤 Authorization
 
-- Role-based access control (admin / user)
-- Ownership-based permissions (user-specific data access)
+- Role-based authorization
+- Ownership-based authorization
 
-### 🗄️ Database & ORM Improvements
+## 🗄️ Database
 
-- One-to-many relationships (e.g., User → Dogs)
-- Foreign keys & cascading rules
-- Improved schema design practices
+- Cascade delete/update
+- Advanced SQLAlchemy relationships
+- Better schema design
+- Database indexing
 
-### ⚙️ Backend Architecture
+## ⚙️ Backend Architecture
 
-- Service layer separation
-- Repository pattern (clean database access)
-- Centralized error handling
-- Consistent API response structure
+- Repository Pattern
+- Service Layer
+- Centralized exception handling
+- Standardized API responses
 
-### 🧪 Testing
+## 🧪 Testing
 
-- Pytest setup
-- Unit tests for CRUD operations
+- Pytest
+- CRUD unit tests
 - Test database configuration
 
-### 📈 DevOps (Future)
+## 📈 DevOps
 
-- Docker containerization
-- Environment-based configuration (dev/staging/prod)
-- Deployment (Render / Railway / AWS basics)
-
----
-
-## 🧪 Project Philosophy
-
-This project is used as a **learning sandbox** to progressively build real-world backend engineering skills by evolving a single codebase over time.
+- Docker
+- Environment separation
+- CI/CD basics
+- Deployment (Render / Railway / AWS)
 
 ---
 
-## 📌 Notes
+# 📌 Project Philosophy
 
-- Database schema is managed using Alembic migrations (no `create_all` in production flow)
-- Supabase is used as hosted PostgreSQL
-- Project will continuously evolve with new backend concepts
+This repository is a learning-focused backend project that evolves over time. Instead of building multiple disconnected demos, new backend concepts are continuously integrated into a single codebase to simulate the growth of a real production application.
 
 ---
 
-## 🔮 Next Step
+# 📝 Notes
 
-Implement authentication system (JWT + password hashing)
+- Uses Alembic for schema versioning and migrations.
+- Uses PostgreSQL hosted on Supabase.
+- Follows a layered architecture (API → Service → Repository).
+- Built primarily for learning backend engineering best practices.
+
+---
+
+# 🔮 Next Milestone
+
+Implement a complete authentication system featuring:
+
+- Password hashing
+- User registration
+- User login
+- JWT access tokens
+- Protected API endpoints
+- User model integration with existing relationships
