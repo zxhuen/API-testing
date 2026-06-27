@@ -45,8 +45,12 @@ Supabase
 
 -added pagination on both dog and person
 
+## (6/27/26)
+
+-added alembic
+
 ### future stuff
 
--alembic
+-discontinued
 
 ### I will then create another template with full CRUD + Alembic soon
