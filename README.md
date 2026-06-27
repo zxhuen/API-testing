@@ -1,56 +1,124 @@
-#### TECH STACK :
+# FeedBook Demo API
 
-## Backend
+A backend API built with FastAPI, SQLAlchemy, and PostgreSQL (Supabase), focused on learning backend development fundamentals such as CRUD, database migrations, and authentication.
 
-Python
-FastAPI
+---
 
-## Database
+## 🚀 Tech Stack
 
-PostgreSQL (Supabase)
+### Backend
 
-## ORM
+- Python
+- FastAPI
 
-SQLAlchemy
+### Database
 
-## Validation
+- PostgreSQL (Supabase)
 
-Pydantic
+### ORM
 
-## Configuration
+- SQLAlchemy
 
-Pydantic Settings + dotenv
+### Migrations
 
-## Database Driver
+- Alembic
 
-psycopg2
+### Validation
 
-## Backend-as-a-Service
+- Pydantic
 
-Supabase
+### Configuration
 
-### LOGS
+- Pydantic Settings
+- dotenv
 
-### (6/24/26)
+### Database Driver
 
--added dog model
--added search by ID on both dog and person model
+- psycopg2
 
-### (6/25/26)
+### Backend-as-a-Service
 
--added delete on Dog and Person
--added edit on Person
+- Supabase
 
-### (6/26/26)
+---
 
--added pagination on both dog and person
+## 📦 Features Implemented
 
-## (6/27/26)
+### (06/24/26)
 
--added alembic
+- Added Dog model
+- Added search by ID (Person & Dog)
 
-### future stuff
+### (06/25/26)
 
--discontinued
+- Added delete (Dog & Person)
+- Added update/edit (Person)
 
-### I will then create another template with full CRUD + Alembic soon
+### (06/26/26)
+
+- Added pagination (Dog & Person)
+
+### (06/27/26)
+
+- Integrated Alembic for database migrations
+
+---
+
+## 🧠 Learning Roadmap (In Progress)
+
+### 🔐 Authentication & Security
+
+- Password hashing (bcrypt / passlib)
+- User registration & login system
+- JWT authentication
+- Protected routes (auth middleware / dependencies)
+
+### 👤 Authorization
+
+- Role-based access control (admin / user)
+- Ownership-based permissions (user-specific data access)
+
+### 🗄️ Database & ORM Improvements
+
+- One-to-many relationships (e.g., User → Dogs)
+- Foreign keys & cascading rules
+- Improved schema design practices
+
+### ⚙️ Backend Architecture
+
+- Service layer separation
+- Repository pattern (clean database access)
+- Centralized error handling
+- Consistent API response structure
+
+### 🧪 Testing
+
+- Pytest setup
+- Unit tests for CRUD operations
+- Test database configuration
+
+### 📈 DevOps (Future)
+
+- Docker containerization
+- Environment-based configuration (dev/staging/prod)
+- Deployment (Render / Railway / AWS basics)
+
+---
+
+## 🧪 Project Philosophy
+
+This project is used as a **learning sandbox** to progressively build real-world backend engineering skills by evolving a single codebase over time.
+
+---
+
+## 📌 Notes
+
+- Database schema is managed using Alembic migrations (no `create_all` in production flow)
+- Supabase is used as hosted PostgreSQL
+- Project will continuously evolve with new backend concepts
+
+---
+
+## 🔮 Next Step
+
+Implement authentication system (JWT + password hashing)
