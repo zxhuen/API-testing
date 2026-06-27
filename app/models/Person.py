@@ -12,6 +12,7 @@ class Person(Base):
     MiddleName = Column(String, nullable=True)
     alembic_test = Column(String, nullable=True)
     SecretStuff = Column(String, nullable=False)
+    race = Column(String, nullable=True)
 
     created_at = Column(
         DateTime(timezone=True),

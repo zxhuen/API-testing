@@ -11,6 +11,7 @@ class PersonResponse(BaseModel):
     LastName: str
     FirstName: str
     MiddleName: str
+    race: str | None
 
     class Config:
         from_attributes = True
